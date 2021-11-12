@@ -23,7 +23,7 @@ public class Client {
 	String broker = "tcp://utfpr2.iotrixx.com.br:1884";
 	String publisherId = UUID.randomUUID().toString();
 	String subscriberId = UUID.randomUUID().toString();
-	String topic = "/sensor/temperature";
+	String topic = "/sensor/temperatura";
 	
 	void setConnection() {
 		
