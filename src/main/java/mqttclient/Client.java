@@ -80,21 +80,21 @@ public class Client {
 			latch.countDown();
 		    }
 
-				public void deliveryComplete(IMqttDeliveryToken token) {
-					// TODO Auto-generated method stub
+		    public void deliveryComplete(IMqttDeliveryToken token) {
+			// TODO Auto-generated method stub
 
-				}
+		    }
 		});
 
 	     // Subscribe client to the topic filter and a QoS level of 0
 		System.out.println("Inscrevendo-se no topico: " + topic);
 		try {
-				cli.subscribe(topic, 0);
-			} catch (MqttException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		System.out.println("Inscrito");
+			cli.subscribe(topic, 0);
+			System.out.println("Inscrito");
+		} catch (MqttException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		// Wait for the message to be received
 		try {
