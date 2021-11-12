@@ -48,10 +48,10 @@ public class Client {
 		}
 	}
 	
-	void publish(String message) {
+	void publish(String newTopic, String message) {
 		msg = new MqttMessage(message.getBytes());
 		try {
-			cli.publish(topic, msg);
+			cli.publish(newTopic, msg);
 		} catch (MqttPersistenceException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -108,17 +108,16 @@ public class Client {
 	public static void main(String args[]) {
 		Client pub = new Client();
 		pub.setConnection();
-		pub.subscribe();
-		/*while (true) {
-			pub.publish("teste");
+		//pub.subscribe();
+		while (true) {
+			pub.publish("/cereja","vermelha");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}*/
-		
+		}
 	}
 	
 }
